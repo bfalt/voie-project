@@ -15,6 +15,12 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+
+  <% if params[:agent] == "true" %>
+    <%= f.fields_for :agent do |a| %>
+      <%= a.input :company_name %>
+    <% end %>
+  <% end %>
   </div>
 
   <div class="form-actions">
