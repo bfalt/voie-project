@@ -1,7 +1,7 @@
 class JobListing < ApplicationRecord
   belongs_to :user
-  has_many :job_listing_catagories
-  has_many :services, through: :job_listing_catagories
+  has_many :job_listing_categories
+  has_many :services, through: :job_listing_categories
   has_many_attached :photos
 
   validates :title, presence: true

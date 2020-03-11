@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
-  def dashboard
+  def user_dashboard
+  end
+
+  def agent_dashboard
   end
 end
