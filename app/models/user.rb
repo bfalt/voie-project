@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :agent
-  has_one_attached :photo
+  has_many_attached :photos
   has_many :messages
   has_many :job_listings
   accepts_nested_attributes_for :agent
