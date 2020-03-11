@@ -19,7 +19,7 @@
         </li>
 
         <li class="nav-item">
-          <% if current_user == current_user.agent %>
+          <% if current_user.agent %>
             <%= link_to "Dashboard", agent_dashboard_path, class: "nav-link" %>
           <% else %>
             <%= link_to "Dashboard", user_dashboard_path, class: "nav-link" %>
