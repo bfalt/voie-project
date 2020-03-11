@@ -17,12 +17,15 @@
     <div class="col-md-12">
       <%= f.input :title, placeholder: "Title", label: false  %>
     </div>
-    <div class="col-md-6">
-    <%= f.input :description, placeholder: "Description", label: false  %>
+    <div class="form-inputs">
+      <%= f.input :address, placeholder: "Listing address", label: false  %>
     </div>
-  </div>
-  <div class="form-inputs">
-    <%= f.input :address, placeholder: "Address", label: false  %>
+    <div class="col-md-6">
+      <%= f.input :description, placeholder: "Description", label: false  %>
+    </div>
+    <div class="col-md-4">
+      <%= f.association :job_listing_categories, collection: Service.formatted_selection, as: :check_boxes, placeholder: "Description", label: false  %>
+    </div>
   </div>
   <div class="form-inputs text-left">
     <p><strong>Add Photos</strong></p>
