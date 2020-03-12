@@ -183,10 +183,11 @@ company_address = ["8605 Santa Monica Blvd, West Hollywood, CA 90069", "548 Mark
 puts "i'm here ...."
 
 19.times do |n| #or however many agents i'm making
-  Agent.create!({user: User.find(n+1),
-   company_name: Faker::Company.name,
-   company_address: company_address[n-1]
-  })
+  Agent.create!(
+    user: User.find(n+1),
+    company_name: Faker::Company.name,
+    company_address: company_address[n-1]
+  )
 end
 
 puts "Creating new homeowners ...."
@@ -338,7 +339,6 @@ puts "Job Listing Categories created!"
 puts "Creating professions ..."
 
 professions = [
-
   {category: "Lawyer"},
   {category: "Staging Expert"},
   {category: "Photographer"},
