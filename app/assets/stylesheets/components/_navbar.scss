@@ -1,7 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  width: 100%;
+  // max-width: 100vw;
+  z-index: 2;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -26,7 +27,7 @@
   // background: transparent;
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
-  width: 100%;
+  width: 100vw;
   a{
     color: white !important;
   }
