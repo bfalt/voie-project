@@ -29,6 +29,7 @@
     <%= f.fields_for :agent do |a| %>
       <%= a.input :company_name %>
       <%= a.input :company_address %>
+      <%= a.association :agent_professions, collection: Service.formatted_selection, as: :check_boxes, placeholder: "Description", label: false  %>
     <% end %>
   <% end %>
   </div>
