@@ -280,3 +280,97 @@ job_listing.each do |item|
 end
 
 puts "Job listings created!"
+
+puts "Creating services ..."
+services = [
+
+  {category: "Home Value Estimate",
+   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+  },
+  {category: "Staging",
+   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+  },
+  {category: "Photography",
+   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+  },
+  {category: "List your home",
+   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+  },
+  {category: "Contracts",
+   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+  },
+  {category: "Negotiations",
+   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+  }
+]
+
+Service.create!(services)
+
+puts "Services created!"
+
+puts "Creating job_listing_categories ..."
+
+jl_categories =[
+  {service: Service.find(2),
+    job_listing: JobListing.find(1)
+  },
+  {service: Service.find(3),
+    job_listing: JobListing.find(1)
+  },
+  {service: Service.find(4),
+    job_listing: JobListing.find(2)
+  },
+  {service: Service.find(3),
+    job_listing: JobListing.find(2)
+  },
+   {service: Service.find(6),
+    job_listing: JobListing.find(2)
+  },
+  {service: Service.find(5),
+    job_listing: JobListing.find(2)
+  }
+]
+
+JobListingCategory.create!(jl_categories)
+
+puts "Job Listing Categories created!"
+
+puts "Creating professions ..."
+
+professions = [
+
+  {category: "Lawyer"},
+  {category: "Staging Expert"},
+  {category: "Photographer"},
+  {category: "Real Estate Agent"},
+  {category: "Home Inspector"},
+  {category: "Mover"}
+]
+
+Profession.create!(professions)
+puts "professions created!"
+
+profession_categories =[
+  {profession: Profession.find(2),
+    agent: Agent.find(1)
+  },
+  {profession: Profession.find(3),
+    agent: Agent.find(2)
+  },
+  {profession: Profession.find(4),
+    agent: Agent.find(2)
+  },
+  {profession: Profession.find(3),
+    agent: Agent.find(3)
+  },
+   {profession: Profession.find(6),
+    agent: Agent.find(4)
+  },
+  {profession: Profession.find(5),
+    agent: Agent.find(4)
+  }
+]
+
+AgentProfession.create!(profession_categories)
+
+puts "Agent professions created!"
