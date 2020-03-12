@@ -12,7 +12,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto" style="display: inline-flex; align-items: center;">
       <% if user_signed_in? %>
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
@@ -50,8 +50,10 @@
         <li class="nav-item">
           <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Work with voie", new_user_registration_path(agent: true), class: "nav-link" %>
+        <li class="nav-item nav-button" style="display: inline-block; padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 8px; padding-bottom: 8px;">
+          <%= link_to "Join voie", new_user_registration_path(agent: true) %>
         </li>
       <% end %>
     </ul>

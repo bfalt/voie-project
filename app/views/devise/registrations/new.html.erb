@@ -1,42 +1,53 @@
-<h2>Sign up</h2>
+<div class="container form" style="margin-bottom: 60px;">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <div class="row">
 
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "First name" }%>
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Last name" }%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :photo, as: :file, input_html: { class: "add-style" }, label_html: { class: "upload-photo" }, label: 'Upload a photo' %>
+    <div class="col-md-9 mx-auto">
 
-  <% if params[:agent] == "true" %>
-    <%= f.fields_for :agent do |a| %>
-      <%= a.input :company_name %>
-      <%= a.input :company_address %>
-      <%= a.association :agent_professions, collection: Service.formatted_selection, as: :check_boxes, placeholder: "Choose your profession", label: false  %>
-    <% end %>
-  <% end %>
+      <h2 style="margin-bottom: 5px;">Sign up</h2>
+        <br>
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :first_name,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "First name" }, placeholder: "First name", label: false %>
+            <%= f.input :last_name,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "Last name" }, placeholder: "Last name", label: false %>
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }, placeholder: "Email", label: false %>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" }, placeholder: "New password", label: false %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" }, placeholder: "Confirm Password", label: false %>
+            <%= f.input :photo, as: :file, input_html: { class: "add-style" }, label_html: { class: "upload-photo" }, label: 'Upload a photo' %>
+
+          <% if params[:agent] == "true" %>
+            <%= f.fields_for :agent do |a| %>
+              <%= a.input :company_name %>
+              <%= a.input :company_address %>
+              <%= a.association :agent_professions, collection: Service.formatted_selection, as: :check_boxes, placeholder: "Choose your profession", label: false  %>
+            <% end %>
+          <% end %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up", class: "btn btn-warning" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+
+      </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
