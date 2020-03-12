@@ -1,4 +1,5 @@
 class JobListingsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @job_listings = JobListing.all
@@ -20,6 +21,6 @@ class JobListingsController < ApplicationController
   private
 
   def job_listing_params
-    params.require(:job_listing).permit(:title, :description, :address, photos: [], :category_ids)
+    params.require(:job_listing).permit(:title, :description, :address, photos: = [], :category_ids)
   end
 end
