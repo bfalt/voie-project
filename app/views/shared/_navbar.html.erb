@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= "home-navbar" if params[:action] == 'home' %>">
   <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
@@ -19,7 +19,7 @@
         </li>
 
         <li class="nav-item">
-          <% if current_user == current_user.agent %>
+          <% if current_user.agent %>
             <%= link_to "Dashboard", agent_dashboard_path, class: "nav-link" %>
           <% else %>
             <%= link_to "Dashboard", user_dashboard_path, class: "nav-link" %>
@@ -36,7 +36,19 @@
         </li>
       <% else %>
         <li class="nav-item">
+          <%= link_to "How it works", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "About Us", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Work with voie", new_user_registration_path(agent: true), class: "nav-link" %>
         </li>
       <% end %>
     </ul>

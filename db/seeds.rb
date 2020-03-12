@@ -261,17 +261,22 @@ job_listing = [
   {title: "Hazel Glen Home",
    description: "Three bedroom, three bathroom home. 3,000 square feet. I bought the home in 2008 together with my husband. This is our second home together and we're moving to Colorado!",
    user: users[0],
-   photo: "../app/assets/images/houses/House1.jpeg",
+   photo: Rails.root.join("app", "assets", "images", "houses", "House1.jpeg"),
    address: "410 Consuelo Drive, Santa Barbara, CA 93110"
   },
 
   {title: "F Street Beauty" ,
    description: "5 bedroom 4 bath, 3,600 square feet. Built in 1992. This is my third home, second home together with my husband.",
    user: users[1],
-   photo: "../app/assets/images/houses/House2.jpg",
+   photo: Rails.root.join("app", "assets", "images", "houses", "House2.jpg"),
    address: "501 West Broadway, Suite 1050, San Diego, CA 92101"
   }
 ]
 
-JobListing.create!(job_listing)
+job_listing.each do |item|
+  job = JobListing.new(item)
+  job.photos.attach(io: URI.open(item[:photo]), filename: job.title + '.jpg', content_type: "image/jpg")
+  job.save!
+end
+
 puts "Job listings created!"
