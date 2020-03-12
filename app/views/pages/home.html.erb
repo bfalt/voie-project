@@ -1,8 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= asset_path("Agent_and_Client.jpg")%>')">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)), url('<%= asset_path("Agent_and_Client.jpg")%>')">
   <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <h1>The <strong>future</strong> of real estate services!</h1>
+    <div class="banner-text"><p>Zero Comission   |  No Contracts  |  Zero Pressure</p></div>
+    <a class="btn btn-warning" href="#">How it Works</a>
+    <a class="btn btn-warning" <%= link_to "View Services", services_path %> </a>
   </div>
 </div>
 
@@ -10,4 +11,4 @@
 <%= link_to "Become an agent", new_user_registration_path(agent: true) %>
 
 
-<%= link_to "View Services", services_path %>
+
