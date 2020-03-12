@@ -1,7 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= "home-navbar navbar-homepage" if request.path == root_path %>">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%=  request.path == root_path ? "home-navbar navbar-homepage" : "navbar-shadow" %>">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <% if (request.path == root_path) %>
+        <%= image_tag "voie-logo-w.png" %>
+    <% else %>
+        <%= image_tag "voie-logo.png" %>
     <% end %>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

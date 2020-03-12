@@ -2,9 +2,10 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3)), url('<%= asset_path("Agent_and_Client.jpg")%>')">
     <div class="styled-container">
       <h1>The <strong>future</strong> of real estate services!</h1>
-      <div class="banner-text"><p>Zero Comission   |  No Contracts  |  Zero Pressure</p></div>
+      <div class="banner-text"><p>Zero Comission   |  No Contracts  |  Zero Pressure</p>
+      </div>
       <a class="btn btn-warning" href="#">How it Works</a>
-      <a class="btn btn-warning" <%= link_to "View Services", services_path %> </a>
+      <a class="btn btn-warning" href="/services" >View Services </a>
     </div>
   </div>
 
@@ -19,45 +20,43 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi exercitationem, dicta quod vel accusantium doloribus nobis voluptates. Quos voluptate error incidunt facilis.</p>
       </div>
     </div>
-  </div>
-
 
   <!-- Service Cards -->
 
   <h4>Explore what our agents offer</h4>
   <div class="service-cards" >
     <%= link_to services_path do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("House15.jpeg")%>')">
-        <h3>List Your Home</h3>
-      </div>
-    <% end %>
-
-    <%= link_to services_path do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("Stage.jpg")%>')">
-        <h3>Staging</h3>
-      </div>
-    <% end %>
-
-    <%= link_to services_path do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("contract.jpg")%>')">
-        <h3>Contracts</h3>
-      </div>
-    <% end %>
-
-    <%= link_to services_path do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("Chart.jpg")%>')">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("service1.jpg")%>')">
         <h3>Home Value Estimate</h3>
       </div>
     <% end %>
 
     <%= link_to services_path do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("Photographer2.jpg")%>')">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("service2.jpg")%>')">
+        <h3>Staging</h3>
+      </div>
+    <% end %>
+
+    <%= link_to services_path do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("service3.jpg")%>')">
         <h3>Photography</h3>
       </div>
     <% end %>
 
     <%= link_to services_path do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("Negotiation.jpg")%>')">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("service4.jpg")%>')">
+        <h3>List Your Home</h3>
+      </div>
+    <% end %>
+
+    <%= link_to services_path do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("service5.jpg")%>')">
+        <h3>Contracts</h3>
+      </div>
+    <% end %>
+
+    <%= link_to services_path do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("service6.jpg")%>')">
         <h3>Negotiations</h3>
       </div>
     <% end %>
@@ -86,7 +85,4 @@
         </div>
       </div>
     </div>
-
 </div>
-
-
