@@ -339,12 +339,12 @@ puts "Creating professions ..."
 
 professions = [
 
-  {category: "Home Value Estimate"},
-  {category: "Staging"},
-  {category: "Photography"},
-  {category: "List your home"},
-  {category: "Contracts"},
-  {category: "Negotiations"}
+  {category: "Lawyer"},
+  {category: "Staging Expert"},
+  {category: "Photographer"},
+  {category: "Real Estate Agent"},
+  {category: "Home Inspector"},
+  {category: "Mover"}
 ]
 
 Profession.create!(professions)
