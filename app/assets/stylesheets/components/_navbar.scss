@@ -30,9 +30,9 @@
 }
 
 .navbar-homepage{
-  // background: transparent;
   background: rgba(0, 0, 0, 0.3);
-  width: 100%;
+  position: fixed;
+  width: 100vw;
   a{
     color: white !important;
   }
