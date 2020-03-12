@@ -2,6 +2,13 @@
   justify-content: space-between;
   background: white;
   width: 100%;
+  height: 80px;
+}
+
+.navbar-shadow{
+  -webkit-box-shadow: -1px -4px 16px 0px rgba(112,110,112,1);
+  -moz-box-shadow: -1px -4px 16px 0px rgba(112,110,112,1);
+  box-shadow: -1px -4px 16px 0px rgba(112,110,112,1);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,12 +16,12 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 120px;
+  padding-left: 25px;
 }
 
 .home-navbar {
   position: fixed;
-  background-color: #00000059;
 }
 
 .nav-link a{
@@ -24,8 +31,7 @@
 
 .navbar-homepage{
   // background: transparent;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
   width: 100%;
   a{
     color: white !important;

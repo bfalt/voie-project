@@ -11,3 +11,28 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.box{
+  width: 100%;
+  overflow: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  .inner{
+    display: inline-block;
+    height: 150px;
+    width: 200px;
+    background: red;
+    margin-right: 10px;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+}
+

@@ -1,0 +1,57 @@
+.service-card-container{
+  width: 100%;
+  overflow: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-color: white;
+  padding-left: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .inner-service-card{
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    height: 160px;
+    width: 340px;
+    margin-right: 20px;
+    background-size: cover;
+    box-shadow: 3px 6px 19px -5px rgba(179,179,179,1);
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+  }:hover{
+    opacity: 0.6;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+}
+
+.card-active {
+  -webkit-box-shadow: -8px -14px 97px -49px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: -8px -14px 97px -49px rgba(0,0,0,0.75) !important;
+  box-shadow: -8px -14px 97px -49px rgba(0,0,0,0.75) !important;
+}
+
+.service-banner {
+  background-color: white;
+  height: 400px;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-right: 90px;
+  padding-left: 90px;
+  margin-bottom: 70px;
+  p{
+    padding: 0px;
+  }
+}
