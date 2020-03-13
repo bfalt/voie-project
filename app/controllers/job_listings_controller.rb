@@ -21,6 +21,6 @@ class JobListingsController < ApplicationController
   private
 
   def job_listing_params
-    params.require(:job_listing).permit(:title, :description, :address, photos: = [], :category_ids)
+    params.require(:job_listing).permit(:title, :description, :address, :category_ids, photos:[])
   end
 end
