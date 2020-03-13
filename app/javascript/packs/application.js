@@ -1,9 +1,13 @@
+// import mapboxgl from 'mapbox-gl';
+// import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+// import 'mapbox-gl/dist/mapbox-gl.css';
+// import { initMapbox } from '../plugins/init_mapbox';
+
+// initMapbox();
+
+  console.log("hello")
 import "bootstrap";
 import $ from 'jquery';
 import { initClickedCard } from '../components/service_card_carousel';
 
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { initMapbox } from '../plugins/init_mapbox';
-
-initMapbox();
 initClickedCard();
