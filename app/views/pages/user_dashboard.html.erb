@@ -18,12 +18,15 @@
       <h3>My Job Listings</h3>
         <% @job_listings.each do |job_listing| %>
           <div class=“card-agentJobListingPhoto”>
-          <%= cl_image_tag job_listing.photos[0].key%>
+            <% if job_listing.photos.attached? %>
+                <%= cl_image_tag job_listing.photos[0].key%>
+            <% end %>
             <div class=“card-dashboard-infos”>
               <h2><%= job_listing.title %></h2>
               <p><%= job_listing.address %></p>
               <p><%= job_listing.description %></p>
               <p>created : <%= job_listing.created_at %> last update:<%= job_listing.updated_at %></p>
+
             </div>
           </div>
       <% end %>
@@ -44,7 +47,6 @@
   </div>
 </div>
 
-<%= link_to "Home page", root_path  %>
 
 
 <% @job_listings.each do |job| %>
