@@ -15,7 +15,7 @@
           </div>
          <div class="card-agentJobListingPhoto">
           <% if job_listing.photos.attached? %>
-            <%= cl_image_tag job_listing.photos[0].key %>
+            <%= cl_image_tag job_listing.photos[0].key%>
           <% end %>
           <div class="card-agentJobListing-infos">
             <h2><%= job_listing.title %></h2>
