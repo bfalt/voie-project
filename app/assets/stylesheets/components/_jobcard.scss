@@ -8,6 +8,21 @@
   border-radius: 7px;
 }
 
+.add-padding {
+  padding: 20px auto;
+}
+
+.bottom-round {
+  border-bottom-left-radius: 7px;
+}
+
+.avatar-adj {
+  margin-left: 20px;
+}
+
+.h2-padding {
+  padding-left: 50px;
+}
 
 .headbanner {
   width: 100%;
@@ -38,12 +53,8 @@
 .card-product {
   overflow: hidden;
   height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
 }
 
 .card-product img {
