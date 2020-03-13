@@ -1,0 +1,53 @@
+<!--Card for Agents' opening job-->
+
+<%= link_to job_listings_path(job_listing), class: "Card" do %>
+
+
+
+
+    <!--seller information part begin-->
+    <div class="agentJobListing_sellerInfo">
+      <div>
+        <% @job_listings.each do |job_listing| %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <!-- comment out for further use with the real avatar-->
+         <!--div class="card-agentJobListingPhoto"-->
+          <!--%= cl_image_tag job_listing.photos[0].key%-->
+
+          <div class="card-dashboard-infos">
+            <h2><%= job_listing.user.first_name %></h2>
+          </div>
+          <div class="form-actions w-100">
+            <%= f.button :submit, class: 'btn-voie'%> <!--class 'btn-voie' has no css style yet!-->
+              <div>
+              <%= link_to "Bid", new_job_listing_offer_path, class: 'btn btn-voie'%>
+              </div>
+            <div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <!--seller information part end -->
+    <div class="agentJobListing_detail">
+      <div>
+        <% @job_listings.each do |job_listing| %>
+         <div class="card-agentJobListingPhoto">
+          <%= cl_image_tag job_listing.photos[0].key%>
+          <div class="card-dashboard-infos">
+            <h2><%= job_listing.title %></h2>
+            <p><%= job_listing.address %></p>
+            <p><%= job_listing.description %></p>
+            <p>created : <%= created_at %>   last update:<%= updated_at %></p>
+          </div>
+          <div class="form-actions w-100">
+            <%= f.button :submit, class: 'btn-voie'%> <!--class 'btn-voie' has no css style yet!-->
+              <div>
+              <%= link_to "Bid", new_job_listing_offer_path, class: 'btn btn-voie'%>
+              </div>
+            <div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <!--listing information part end-->
