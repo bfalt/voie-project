@@ -1,13 +1,15 @@
 <div class="service-card-container">
-    <div style="background-image: url('<%= asset_path "service1.jpeg" %>')" class="carousel-service-card inner-service-card card-active" data-title="<%= @services[0].category %>" data-description="<%= @services[0].description %>">
+  <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path "service1.jpeg" %>')" class="carousel-service-card inner-service-card card-active" data-title="<%= @services[0].category %>" data-description="<%= @services[0].description %>">
     <%= @services[0].category %>
   </div>
   <% @services[1..5].each_with_index do |service, index| %>
-    <div style="background-image: url('<%= asset_path "service#{index + 2}.jpg" %>')" class="carousel-service-card inner-service-card" data-title="<%= service.category %>" data-description="<%= service.description %>">
+    <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path "service#{index + 2}.jpg" %>')" class="carousel-service-card inner-service-card" data-title="<%= service.category %>" data-description="<%= service.description %>">
       <%= service.category %>
     </div>
-  <% end %>
+    <% end %>
 </div>
+
+
 
 <div class="service-banner">
   <h1 id="banner-title">Negotiations</h1>

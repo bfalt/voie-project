@@ -1,4 +1,4 @@
-.service-card-container{
+.service-card-container {
   width: 100%;
   overflow: hidden;
   overflow-x: scroll;
@@ -7,8 +7,9 @@
   padding-left: 40px;
   padding-top: 60px;
   padding-bottom: 60px;
-  .inner-service-card{
 
+
+  .inner-service-card {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -22,9 +23,16 @@
     color: white;
     font-size: 25px;
     font-weight: 500;
-  }:hover{
-    opacity: 0.6;
+    transition: transform .6s;
+    opacity: .85;
   }
+
+  :hover {
+    opacity: 1;
+    transform: scale(1.07);
+    box-shadow: 3px 3px 7px #F7BD2A;
+  }
+
   ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
@@ -51,7 +59,11 @@
   padding-right: 80px;
   padding-left: 80px;
   margin-bottom: 70px;
-  p{
+  p {
     padding: 0px;
   }
+}
+
+#button-transition {
+  transition-duration: 2s;
 }
