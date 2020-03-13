@@ -5,6 +5,16 @@ class JobListingsController < ApplicationController
     @job_listings = JobListing.all
   end
 
+  def show
+    @job_listings = JobListing.geocoded #returns flats with coordinates
+
+    @markers = @job_listings.map do |job_listing|
+      {
+        lat: job_listing.latitude,
+        lng: job_listing.longitude
+      }
+  end
+
   def new
     @job_listing = JobListing.new
   end
