@@ -13,6 +13,7 @@ class JobListingsController < ApplicationController
         lat: job_listing.latitude,
         lng: job_listing.longitude
       }
+    end
   end
 
   def new
@@ -27,10 +28,6 @@ class JobListingsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-     @job_listing = JobListing.find(params[:id])
   end
 
   private

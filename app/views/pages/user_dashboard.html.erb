@@ -2,3 +2,18 @@
 <h4>User Dashboard</h4>
 
 <%= link_to "Home page", root_path  %>
+
+
+<% @job_listings.each do |job| %>
+  <p><%=  job.title %></p>
+  <h1>See the offers</h1>
+  <% job.offers.each do |offer| %>
+    <p><%= offer.price %></p>
+    <p><%= offer.agent.company_name %></p>
+    <p><%= offer.status %></p>
+    <% if offer.status == 'pending' %>
+      <%= link_to "accept", accept_offer_path(offer), method: "patch", style: 'color: black'  %>
+      <%= link_to "reject", reject_offer_path(offer), method: "patch", style: 'color: black'  %>
+    <% end %>
+  <% end %>
+<% end %>
