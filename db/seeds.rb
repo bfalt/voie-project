@@ -286,22 +286,22 @@ puts "Creating services ..."
 services = [
 
   {category: "Home Value Estimate",
-   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+   description: "A crucial step in the home selling process is to determine a price before it goes on the market. Your agent will create a comparative market analysis (CMA) to review comparable homes nearby that are currently on the market, pending, or have recently sold. This will give you more information on what people are willing to pay for homes that are similar to yours, so you can set a competitive price. "
   },
   {category: "Staging",
-   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+   description: "Preparing your property is an art and needs attention if you want to maximize your sale price. Agents often say, “proper preparation prevents poor performance.” Your agent will help you “stage” your home so that it makes a positive first impression among potential buyers, from the time they look at the listing photos, to the moment they walk in the door. The first step in staging a home is removing any excess furniture and clutter to make the room feel larger and to help the buyer visualize the space. It’s best to leave some furniture in the room, so that buyers can picture where their own furniture will go, but not so much that the room feels small."
   },
   {category: "Photography",
-   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+   description: "Because not all photos are created equal! Knowing the art of photography, intimaetly, can be the difference between someone saying, 'Let's skip this house', vs, 'Yes! Let's see it!' Many buyers who live out of the state or the country want to complete a 3D Walkthrough of your property before they waste their time and money to tour it in-person. Having professional photos can make all the difference."
   },
   {category: "List your home",
-   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+   description: "The most basic, yet one of the most important steps! We understand that you may posess the know how when it comes to staging, negotiations, or any other step in the home buying process. In fact, it's probably why you came here! This is our top requested service! Allow us to list your home, so you can wait for the offers to come pouring in."
   },
   {category: "Contracts",
-   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+   description: "Who says that real estate writing can’t be exciting? Real estate is filled with political intrigue, ancient and new laws, old buildings full of history, mindboggling maps, secret rooms, and even magic — making small rooms appear large, and large rooms seem cozy. Real estate (such as laws, zoning, contracts, taking title) is different in every state with some nuances for city and county properties. Let us read all the trade and consumer publications to keep up with current topics in your state, follow interest rates, understand new or revised laws, and know the local market."
   },
   {category: "Negotiations",
-   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quis repudiandae, adipisci repellendus aliquid. Eum consequuntur architecto, voluptatem ratione sit perferendis numquam, id magnam itaque, error tenetur dolores reprehenderit minima."
+   description: "The most effective negotiations aren't always about winning, but rather about getting good results for ourselves and our negotiating partners, while maintaining positive working relationships which can be crucial in future interactions. We work together, with you, for next negotiation with careful analysis, effective process management, and the trusted four-step process"
   }
 ]
 
