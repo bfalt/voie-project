@@ -1,1 +1,22 @@
 <h1>This is where all the agent sees their job listings</h1>
+
+
+<!-- job listings index, show all the listing for agent side-->
+<h4 style=“padding: 25px; text-align: justify;“><%= @job_listings.count %> Open Jobs</h4>
+<section class='listings'>
+  <div class='container-fluid'>
+    <div class="Cards">
+        <div class="col-md-8">
+          <div class='cards'>
+            <% @job_listings.each do |job_listing|  %>
+             <div class='grid-item'>
+                 <%= render "shared/job_listing_card", job_listing: job_listing %>
+             </div>
+            <% end %>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+<h6>No more listing!</h6>
+<p>Try changing your filters</p>

@@ -1,0 +1,39 @@
+<!--Card for Agents' opening job-->
+  <div class="container-fluid">
+    <!--seller information part begin-->
+    <div class="agentJobListing_sellerInfo">
+    </div>
+    <!--seller information part end -->
+    <div class="agentJobListing_detail">
+      <div>
+          <div class="card-agentJobListing-infos">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <h2><%= job_listing.user.first_name %></h2>
+          </div>
+         <div class="card-agentJobListingPhoto">
+          <% if job_listing.photos.attached? %>
+            <%= cl_image_tag job_listing.photos[0].key, width: 100 %>
+          <% end %>
+          <div class="card-agentJobListing-infos">
+            <h2><%= job_listing.title %></h2>
+            <p><%= job_listing.address %></p>
+            <p><%= job_listing.description %></p>
+            <p>created : <%= job_listing.created_at %>   last update:<%= job_listing.updated_at %></p>
+          </div>
+          <div class="form-actions w-100">
+              <%= simple_form_for([job_listing, Offer.new]) do |f| %>
+                <%= f.input :price, placeholder: "Enter the price of the bid", label: false  %>
+                <%= f.button :submit, class: 'btn btn-warning'%>
+              <% end %>
+
+            <%#= f.button :submit, class: ‘btn-voie’%> <!--class ‘btn-voie’ has no css style yet!-->
+            <div>
+            <%= link_to "Bid", new_job_listing_offer_path(job_listing), class: "btn btn-voie" %>
+            </div>
+            <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

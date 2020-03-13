@@ -5,14 +5,26 @@ class JobListingsController < ApplicationController
     @job_listings = JobListing.all
   end
 
+  def show
+    @job_listings = JobListing.geocoded #returns flats with coordinates
+
+    @markers = @job_listings.map do |job_listing|
+      {
+        lat: job_listing.latitude,
+        lng: job_listing.longitude
+      }
+    end
+  end
+
   def new
     @job_listing = JobListing.new
   end
 
   def create
     @job_listing = JobListing.new(job_listing_params)
+    @job_listing.user =  current_user
     if @job_listing.save
-      redirect_to root_path
+      redirect_to user_dashboard_path
     else
       render :new
     end

@@ -12,21 +12,29 @@ class OffersController < ApplicationController
   end
 
   def create
-
+    @offer = Offer.new(offer_params)
+    @offer.agent =  current_user.agent
+    @job_listing = JobListing.find(params[:job_listing_id])
+    @offer.job_listing = @job_listing
+    if @offer.save
+      redirect_to agent_dashboard_path
+    else
+      render 'job_listings/index'
+    end
   end
 
   def accept
-    @offer = Offer.find(params[:offer_id])
+    @offer = Offer.find(params[:id])
     @offer.status = "accepted"
     @offer.save
-    redirect_to pages_dashboard_path, notice: "Offer accepted"
+    redirect_to user_dashboard_path, notice: "Offer accepted"
   end
 
   def reject
-    @offer = Offer.find(params[:offer_id])
+    @offer = Offer.find(params[:id])
     @offer.status = "rejected"
     @offer.save
-    redirect_to pages_dashboard_path, notice: "Offer rejected"
+    redirect_to user_dashboard_path, notice: "Offer rejected"
   end
 
   private

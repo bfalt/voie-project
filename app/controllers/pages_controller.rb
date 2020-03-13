@@ -9,5 +9,6 @@ class PagesController < ApplicationController
   end
 
   def agent_dashboard
+    @offers = Offer.where(agent: current_user.agent)
   end
 end
