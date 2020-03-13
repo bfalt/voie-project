@@ -1,6 +1,7 @@
 
 <div class="headbanner">
-  <h1><%= @job_listings.count %> Open Job Listings</h1>
+  <h1 style="padding-bottom: 10px; padding-left: 50px;"><%= @job_listings.count %> Open Job Listings</h1>
+    <p>Submit your offer your services</p>
 </div>
 
 
@@ -8,7 +9,7 @@
 <section class='listings'>
   <div class='container-fluid'>
     <div class="Cards">
-        <div class="col-md-8">
+        <div class="col-md-10">
           <div class='cards'>
             <% @job_listings.each do |job_listing|  %>
              <div class='grid-item'>
