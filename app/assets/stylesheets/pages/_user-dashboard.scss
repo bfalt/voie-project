@@ -1,0 +1,23 @@
+.nav-item {
+  margin-top: 10px;
+  font-size: 25px;
+  justify-content: space-around;
+
+  a {
+  color: black;
+
+  }
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #696969;
+}
+
+
+h3 {
+  margin-top: 80px;
+  text-align: left;
+  color: black;
+}
+

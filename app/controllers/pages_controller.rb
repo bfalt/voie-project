@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def user_dashboard
+    @job_listings = JobListing.where(user: current_user)
   end
 
   def agent_dashboard
