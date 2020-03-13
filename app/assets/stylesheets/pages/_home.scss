@@ -28,6 +28,10 @@ body {
   line-height: 3.2;
 }
 
+h4 {
+  margin-top: 75px;
+}
+
 p {
   padding: 5px 50px;
   margin-bottom: 2rem;
@@ -36,12 +40,15 @@ p {
 .reviews-container {
   padding: 15px;
   margin: auto;
+}
 
+.service-cards {
+  margin: 0px 80px;
+}
 
-  h3 {
-    color: black;
-    text-align: left;
-  }
+.service-card-text {
+  color: white;
+  text-align: center;
 }
 
 .home-review-col {
