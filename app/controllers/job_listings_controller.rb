@@ -21,11 +21,16 @@ class JobListingsController < ApplicationController
 
   def create
     @job_listing = JobListing.new(job_listing_params)
+    @job_listing.user =  current_user
     if @job_listing.save
-      redirect_to root_path
+      redirect_to user_dashboard_path
     else
       render :new
     end
+  end
+
+  def show
+     @job_listing = JobListing.find(params[:id])
   end
 
   private
