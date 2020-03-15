@@ -5,6 +5,15 @@ class JobListingsController < ApplicationController
     @job_listings = JobListing.all
   end
 
+  def show
+    @job_listing = JobListing.find(params[:id])
+    @markers =
+      [{
+        lat: @job_listing.latitude,
+        lng: @job_listing.longitude
+      }]
+  end
+
   def new
     @job_listing = JobListing.new
   end

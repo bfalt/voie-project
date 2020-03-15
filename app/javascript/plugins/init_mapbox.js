@@ -18,10 +18,10 @@ const addMarkersToMap = (map, markers) => {
     // Create a HTML element for your custom marker
     const element = document.createElement('div');
     element.className = 'marker';
-    element.style.backgroundImage = `url('${marker.image_url}')`;
+    element.style.backgroundImage = "url('https://cdn3.iconfinder.com/data/icons/map-markers-1/512/residence-512.png')"
     element.style.backgroundSize = 'contain';
-    element.style.width = '25px';
-    element.style.height = '25px';
+    element.style.width = '35px';
+    element.style.height = '35px';
 
 
 
