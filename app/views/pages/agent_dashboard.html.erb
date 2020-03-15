@@ -10,13 +10,18 @@
   </li>
 </ul>
 
-
-
 <div class="tab-content" id="pills-tabContent">
 <!--   IN PROGRESS TAB -->
   <div class="tab-pane fade show active" id="In-Progress-Jobs" role="tabpanel" aria-labelledby="pills-home-tab">
     <h3>My In Progress Jobs</h3>
-        <!-- insert code/card here -->
+       <% @offers.each do |offer| %>
+        <p><%= offer.price %></p>
+        <p><%= offer.job_listing.title %></p>
+        <p><%= offer.job_listing.description %></p>
+        <% offer.job_listing.services.each do |service| %>
+          <p><%= service.category %></p>
+        <% end %>
+        <% end %>
   </div>
 
 <!--   AGENT BIDS TAB -->
@@ -31,5 +36,7 @@
     <p>ALl the jobs that I have completed!</p>
   </div>
 </div>
+
+<%= link_to "View Jobs", job_listings_path, class: "btn btn-warning" %>
 
 <a class="btn btn-warning" href="/" >Home Page</a>
