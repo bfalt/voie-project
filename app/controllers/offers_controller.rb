@@ -37,6 +37,13 @@ class OffersController < ApplicationController
     redirect_to user_dashboard_path, notice: "Offer rejected"
   end
 
+  def complete
+    @offer = Offer.find(params[:id])
+    @offer.status = "completed"
+    @offer.save
+    redirect_to agent_dashboard_path, notice: "Offer completed"
+  end
+
   private
 
   def offer_params

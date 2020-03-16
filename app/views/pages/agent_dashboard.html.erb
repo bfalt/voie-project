@@ -21,7 +21,11 @@
         <% offer.job_listing.services.each do |service| %>
           <p><%= service.category %></p>
         <% end %>
+        <% if offer.status != "completed" %>
+          <%= link_to "complete?", complete_offer_path(offer), method: "patch", style: 'color: black'  %>
         <% end %>
+      <% end %>
+
   </div>
 
 <!--   AGENT BIDS TAB -->
