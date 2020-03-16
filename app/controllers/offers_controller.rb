@@ -1,5 +1,6 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show]
+  before_action :authenticate_user!
   def index
     @offers = current_user.offers
   end

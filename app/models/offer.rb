@@ -2,7 +2,9 @@ class Offer < ApplicationRecord
   belongs_to :job_listing
   belongs_to :agent
   has_many :reviews
-  has_many :messages
+  has_many :messages, dependent: :destroy
+
+  validates_uniqueness_of :job_listing_id, :scope => :agent_id
 
   after_update :check_offers_status
 
