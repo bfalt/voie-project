@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   resources :job_listings do
     resources :offers, only: [:new, :create]
   end
+
+  resources :offers, only: [ ] do
+    resources :reviews, only: [:new, :create]
+  end
+
 end
