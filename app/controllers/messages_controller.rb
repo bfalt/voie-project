@@ -1,10 +1,28 @@
 class MessagesController < ApplicationController
    before_action do
-   @offer = offer.find(params[:offer_id])
+     @offer = Offer.find(params[:offer_id])
+    end
+
+  def index
+    @messages = @offer.messages
+    if @messages.length > 10
+      @over_ten = true
+      @messages = @messages[-10..-1]
+    end
+    if params[:m]
+      @over_ten = false
+      @messages = @offer.messages
+    end
+    if @messages.last
+      if @messages.last.user_id != current_user.id
+        @messages.last.read = true;
+      end
+    end
+    @message = Message.new(offer: @offer)
   end
 
   def new
-    @message = @offer.messages.new
+    @message = Message.new(offer: @offer)
 
   end
 
@@ -12,21 +30,13 @@ class MessagesController < ApplicationController
     @message = @offer.messages.new(message_params)
     @message.user_id = current_user.id
     if @message.save
-      respond_to do |format|
-        format.html { redirect_to offer_path(@offer) } # fallback for certain browsers
-        format.js  # <-- will render `app/views/messages/create.js.erb`
-      end
-    else
-      respond_to do |format|
-        format.html { redirect_to offer_path(@offer) }
-        format.js  # <-- will render `app/views/messages/create.js.erb`
-      end
+      redirect_to offer_messages_path(@offer)
     end
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:body)
+    params.require(:message).permit(:content, :user_id)
   end
 end

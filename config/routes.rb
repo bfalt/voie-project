@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   resources :offers, only: [ ] do
     resources :reviews, only: [:new, :create]
-  end
-
+    resources :messages, only: [:index, :new, :create]
+   end
 end

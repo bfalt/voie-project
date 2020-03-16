@@ -35,7 +35,10 @@
                     <% if offer.status == 'pending' %>
                       <%= link_to "accept", accept_offer_path(offer), method: "patch", style: 'color: black'  %>
                       <%= link_to "reject", reject_offer_path(offer), method: "patch", style: 'color: black'  %>
-                    <% end %>
+                  <% end %>
+                      <% if offer.status != 'pending' %>
+                      <%= link_to "Message your agent!", offer_messages_path(offer), class: 'btn btn-primary'  %>
+                  <% end %>
                     <% if offer.status == "completed" %>
                       <%= link_to "Leave a review", new_offer_review_path(offer), style: 'color: black'  %>
                     <% end %>
