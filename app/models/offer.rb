@@ -14,4 +14,5 @@ class Offer < ApplicationRecord
       offers.each { |offer| offer.update(status: 'rejected')}
     end
   end
+
 end
