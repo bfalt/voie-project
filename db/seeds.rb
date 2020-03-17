@@ -184,7 +184,7 @@ puts "i'm here ...."
 
 19.times do |n| #or however many agents i'm making
   Agent.create!(
-    user: User.find(n+1),
+    user: User.all[n],
     company_name: Faker::Company.name,
     company_address: company_address[n-1]
   )

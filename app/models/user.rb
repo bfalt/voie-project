@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :agent
+  has_one :agent, dependent: :destroy
   has_many_attached :photos
-  has_many :messages
-  has_many :job_listings
+  has_many :messages, dependent: :destroy
+  has_many :job_listings, dependent: :destroy
   accepts_nested_attributes_for :agent
 
   validates :first_name, presence: true
