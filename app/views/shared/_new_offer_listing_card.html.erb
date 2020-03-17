@@ -24,14 +24,24 @@
 
           <div class="form-actions w-100 col-sm-3 add-padding">
             <% @job_listings.each do |job| %>
+              <% if job.offers.empty? %>
+                <%= link_to "Edit", edit_job_listing_path(job), class: "btn btn-primary"%>
+                <%= link_to "Delete", job_listing_path(job), class: "btn btn-warning", method: :delete, data: { confirm: "Are you sure?" }%>
+              <% end %>
                   <% job.offers.each do |offer| %>
                     <h5><%= offer.price %></h5>
                         <p><%= offer.agent.company_name %></p>
                       <p><%= offer.status %></p>
                     <% if offer.status == 'pending' %>
-                <%= link_to "accept", accept_offer_path(offer), method: "patch", style: 'color: black'  %>
-                <%= link_to "reject", reject_offer_path(offer), method: "patch", style: 'color: black'  %>
-              <% end %>
+                      <%= link_to "accept", accept_offer_path(offer), method: "patch", style: 'color: black'  %>
+                      <%= link_to "reject", reject_offer_path(offer), method: "patch", style: 'color: black'  %>
+                  <% end %>
+                      <% if offer.status != 'pending' %>
+                      <%= link_to "Message your agent!", offer_messages_path(offer), class: 'btn btn-primary'  %>
+                  <% end %>
+                    <% if offer.status == "completed" %>
+                      <%= link_to "Leave a review", new_offer_review_path(offer), style: 'color: black'  %>
+                    <% end %>
             <% end %>
             <% end %>
           </div>

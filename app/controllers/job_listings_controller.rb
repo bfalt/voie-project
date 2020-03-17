@@ -22,10 +22,29 @@ class JobListingsController < ApplicationController
     @job_listing = JobListing.new(job_listing_params)
     @job_listing.user =  current_user
     if @job_listing.save
-      redirect_to user_dashboard_path
+      redirect_to user_dashboard_path, notice: 'We have recieved your listing!'
     else
       render :new
     end
+  end
+
+  def edit
+    @job_listing = JobListing.find(params[:id])
+  end
+
+  def update
+    @job_listing = JobListing.find(params[:id])
+    if @job_listing.update(job_listing_params)
+      redirect_to user_dashboard_path, notice: 'Your listing was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+   def destroy
+    @job_listing = JobListing.find(params[:id])
+    @job_listing.destroy
+    redirect_to user_dashboard_path, notice: 'Your listing was successfully deleted.'
   end
 
   private

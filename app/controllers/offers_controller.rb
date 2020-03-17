@@ -1,5 +1,6 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show]
+  before_action :authenticate_user!
   def index
     @offers = current_user.offers
   end
@@ -35,6 +36,13 @@ class OffersController < ApplicationController
     @offer.status = "rejected"
     @offer.save
     redirect_to user_dashboard_path, notice: "Offer rejected"
+  end
+
+  def complete
+    @offer = Offer.find(params[:id])
+    @offer.status = "completed"
+    @offer.save
+    redirect_to agent_dashboard_path, notice: "Offer completed"
   end
 
   private
