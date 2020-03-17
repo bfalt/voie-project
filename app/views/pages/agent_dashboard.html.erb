@@ -22,6 +22,9 @@
           <p><%= service.category %></p>
         <% end %>
         <p><%= offer.status %></p>
+        <% unless offer.messages.empty? %>
+          <%= link_to "Messages", offer_messages_path(offer), class: "btn btn-primary" %>
+        <% end %>
         <% if offer.status != "completed" %>
           <%= link_to "complete?", complete_offer_path(offer), method: "patch", style: 'color: black'  %>
         <% end %>
