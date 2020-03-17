@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_085739) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "read", default: false
     t.index ["offer_id"], name: "index_messages_on_offer_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
