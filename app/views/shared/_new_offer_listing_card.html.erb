@@ -1,52 +1,49 @@
 <%#= link_to job_listings_path(job_listing), class: "Card" do %>
-  <div class="container-fluid">
-    <div class="row">
-    <div class="jobcard col-md-10 px-0 mx-auto">
 
-      <div style="border-bottom: 1px solid grey;">
-        <div class="userinfo">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar avatar-adj dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <p style="color: black; display: inline-flex; text-shadow: none;"><%= job_listing.user.first_name + " " + job_listing.user.last_name%></p>
-          </div>
-        </div>
+<div class="jobcard px-0 mx-4">
 
-        <div class="card-product">
-          <% if job_listing.photos.attached? %>
-            <%= cl_image_tag job_listing.photos[0].key, class: "bottom-round"%>
-          <% end %>
-
-          <div class="card-product-infos col-sm-6" style="padding-left: 0 !important">
-            <h2 class="h2-padding"><%= job_listing.title %></h2>
-            <p><%= job_listing.address %></p>
-            <p><%= job_listing.description %></p>
-              <!-- <p>created : <%= job_listing.created_at %>   last update:<%= job_listing.updated_at %></p> -->
-          </div>
-
-          <div class="form-actions w-100 col-sm-3 add-padding">
-            <% @job_listings.each do |job| %>
-              <% if job.offers.empty? %>
-                <%= link_to "Edit", edit_job_listing_path(job), class: "btn btn-primary"%>
-                <%= link_to "Delete", job_listing_path(job), class: "btn btn-warning", method: :delete, data: { confirm: "Are you sure?" }%>
-              <% end %>
-                  <% job.offers.each do |offer| %>
-                    <h5><%= offer.price %></h5>
-                        <p><%= offer.agent.company_name %></p>
-                      <p><%= offer.status %></p>
-                    <% if offer.status == 'pending' %>
-                      <%= link_to "accept", accept_offer_path(offer), method: "patch", style: 'color: black'  %>
-                      <%= link_to "reject", reject_offer_path(offer), method: "patch", style: 'color: black'  %>
-                  <% end %>
-                      <% if offer.status != 'pending' %>
-                      <%= link_to "Message your agent!", offer_messages_path(offer), class: 'btn btn-primary'  %>
-                  <% end %>
-                    <% if offer.status == "completed" %>
-                      <%= link_to "Leave a review", new_offer_review_path(offer), style: 'color: black'  %>
-                    <% end %>
-            <% end %>
-            <% end %>
-          </div>
-        </div>
+  <div style="border-bottom: 1px solid grey;">
+    <div class="userinfo">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar avatar-adj dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <p style="color: black; display: inline-flex; text-shadow: none;"><%= job_listing.user.first_name + " " + job_listing.user.last_name%></p>
       </div>
     </div>
+
+    <div class="card-product">
+      <% if job_listing.photos.attached? %>
+        <%= cl_image_tag job_listing.photos[0].key, class: "bottom-round"%>
+      <% end %>
+
+      <div class="card-product-infos col-sm-6" style="padding-left: 0 !important">
+        <h2 class="h2-padding"><%= job_listing.title %></h2>
+        <p><%= job_listing.address %></p>
+        <p><%= job_listing.description %></p>
+          <!-- <p>created : <%= job_listing.created_at %>   last update:<%= job_listing.updated_at %></p> -->
+      </div>
+
+      <div class="form-actions w-100 col-sm-3 add-padding">
+        <% @job_listings.each do |job| %>
+          <% if job.offers.empty? %>
+            <%= link_to "Edit", edit_job_listing_path(job), class: "btn btn-primary"%>
+            <%= link_to "Delete", job_listing_path(job), class: "btn btn-warning", method: :delete, data: { confirm: "Are you sure?" }%>
+          <% end %>
+              <% job.offers.each do |offer| %>
+                <h5><%= offer.price %></h5>
+                    <p><%= offer.agent.company_name %></p>
+                  <p><%= offer.status %></p>
+                <% if offer.status == 'pending' %>
+                  <%= link_to "accept", accept_offer_path(offer), method: "patch", style: 'color: black'  %>
+                  <%= link_to "reject", reject_offer_path(offer), method: "patch", style: 'color: black'  %>
+              <% end %>
+                  <% if offer.status != 'pending' %>
+                  <%= link_to "Message your agent!", offer_messages_path(offer), class: 'btn btn-primary'  %>
+              <% end %>
+                <% if offer.status == "completed" %>
+                  <%= link_to "Leave a review", new_offer_review_path(offer), style: 'color: black'  %>
+                <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
+</div>
+
