@@ -22,7 +22,7 @@ class JobListingsController < ApplicationController
     @job_listing = JobListing.new(job_listing_params)
     @job_listing.user = current_user
     if @job_listing.save
-      redirect_to user_dashboard_path, notice: 'We have recieved your listing!'
+      redirect_to user_dashboard_path, notice: 'Your listing was successfully created!'
     else
       render :new
     end

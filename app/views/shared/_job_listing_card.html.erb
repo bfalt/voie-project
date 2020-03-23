@@ -12,11 +12,11 @@
 
         <div class="card-product">
           <% if job_listing.photos.attached? %>
-            <%= cl_image_tag job_listing.photos[0].key, class: "bottom-round"%>
+            <%= cl_image_tag job_listing.photos[0].key %>
           <% end %>
 
-          <div class="card-product-infos col-sm-6" style="padding-left: 0 !important">
-            <h2 class="h2-padding"><%= job_listing.title %></h2>
+          <div class="col-sm-6" style="padding-left: 0 !important">
+            <h2><%= job_listing.title %></h2>
             <p><%= job_listing.address %></p>
             <p><%= job_listing.description %></p>
               <!-- <p>created : <%= job_listing.created_at %>   last update:<%= job_listing.updated_at %></p> -->
